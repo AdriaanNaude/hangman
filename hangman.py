@@ -12,27 +12,35 @@ word_length = len(word)
 
 print("The word length is: " + str(word_length))
 
-point = 0
+#point = 0
 guess = 0
 
 
-def loop(user_input, word):
-    while guess <= 6:
-
-    r_expresion(user_input, word)
-
 
 def r_expresion(user_input, word):
-    regex = rf"{user_input}"
+    regex = rf"^{user_input}$"
 
-    if re.search(regex, word):
-        return true
+    if re.match(regex, word):
+        print("Match")
     else:
-        return false
+       print("No match")
 
-def keuse(point, guess):
+while guess < 10:
+    user_stdin = input("Your")
+    
+    r_expresion(user_stdin, word)
+
+"""
+def resultate(point, guess):
     if guess == 6:
         print("guesses done")
     if point == word_length:
         print("You win " + point + " " + word)
 
+def keuse():
+    y_n = input(">Do you want to retry\n[y/n]: ")
+    if y_n == "y" | y_n == "Y":
+        loop()
+    else:
+        print("goodbye")
+"""
